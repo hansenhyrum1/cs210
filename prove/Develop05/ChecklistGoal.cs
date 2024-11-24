@@ -14,34 +14,26 @@ public class ChecklistGoal : Goal
 
     public override string Display()
     {
-        string _status;
-        if (_timesCompleted >= _targetCount)
-        {
-            _status = "[X]";
-        }
-        else
-        {
-            _status = "[ ]";
-        }
-
-        return $"{_status} Checklist Goal: {_name} (Completed {_timesCompleted}/{_targetCount}, {_points} points per completion, {_bonusPoints} bonus)";
+        string status = _timesCompleted >= _targetCount ? "[X]" : "[ ]";
+        return $"{status} Checklist Goal: {_name} (Completed {_timesCompleted}/{_targetCount}, {_points} points per completion, {_bonusPoints} bonus)";
     }
 
     public override int RecordProgress()
     {
-        _timesCompleted = _timesCompleted + 1;
-
+        _timesCompleted++;
+        int bonus = 0;
         if (_timesCompleted >= _targetCount)
         {
             if (!_isComplete)
             {
                 _isComplete = true;
-                int totalPoints = _points + _bonusPoints;
-                return totalPoints;
+                bonus = _bonusPoints;
             }
         }
 
-        return _points;
+        int pointsEarned = _points + bonus;
+        pointsEarned += GetBonusPoints();
+        return pointsEarned;
     }
 
     public override bool IsComplete()

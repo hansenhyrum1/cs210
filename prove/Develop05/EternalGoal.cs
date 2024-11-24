@@ -9,7 +9,9 @@ public class EternalGoal : Goal
 
     public override int RecordProgress()
     {
-        return _points;
+        _completionCount++;
+        int bonus = GetBonusPoints();
+        return _points + bonus;
     }
 
     public override bool IsComplete()

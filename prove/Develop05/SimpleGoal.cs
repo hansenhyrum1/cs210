@@ -12,8 +12,10 @@ public class SimpleGoal : Goal
 
     public override int RecordProgress()
     {
+        _completionCount++;
+        int bonus = GetBonusPoints();
         _isComplete = true;
-        return _points;
+        return _points + bonus;
     }
 
     public override bool IsComplete()
