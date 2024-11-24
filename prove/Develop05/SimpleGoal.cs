@@ -1,22 +1,23 @@
 public class SimpleGoal : Goal
 {
-    public string _goalType = "Simple Goal"
-    public SimpleGoal(string name, int points) : base(name, points)
-    {
-        isCompleted = false;
+    public SimpleGoal(string name, int points) : base(name, points) 
+    { 
     }
 
+    public override string Display()
+    {
+        string status = _isComplete ? "[X]" : "[ ]";
+        return $"{status} Simple Goal: {_name} ({_points} points)";
+    }
 
     public override int RecordProgress()
     {
-        if (isCompleted = true)
-        {
-            return 100;
-        }
-        else
-        {
-            return 0;
-        }
+        _isComplete = true;
+        return _points;
     }
 
+    public override bool IsComplete()
+    {
+        return _isComplete;
+    }
 }

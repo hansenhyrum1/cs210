@@ -1,38 +1,23 @@
 public abstract class Goal
 {
-    private string _name;
-    private string _description;
-    private int _points;
-    private bool _isComplete;
-    private string _goalCheck;
-    public string _goalType
+    public string _name;
+    public int _points;
+    public bool _isComplete;
 
-    public bool IsComplete()
+    public Goal(string name, int points)
     {
-
+        _name = name;
+        _points = points;
+        _isComplete = false;
     }
 
-    public string Display(string _goaltype)
+    public abstract string Display();
+    public abstract int RecordProgress();
+    public abstract bool IsComplete();
+
+    public string GetName()
     {
-        if (_isComplete = true)
-        {
-            _goalCheck = "[X]"
-        }
-        else if (_isComplete = false)
-        {
-            _goalCheck = "[ ]"
-        }
-
-        return $"{_goalCheck} {_goalType}: {GetName()}"
-    }
-
-    public abstract int RecordProgress()
-    {
-
-    }
-    public abstract int CalculatePoints()
-    {
-
+        return _name;
     }
 
     public void SetName(string name)
@@ -40,18 +25,13 @@ public abstract class Goal
         _name = name;
     }
 
-    public string GetName()
+    public int GetPoints()
     {
-        return _name;
+        return _points;
     }
 
     public void SetPoints(int points)
     {
         _points = points;
-    }
-
-    public string GetPoints()
-    {
-        return _points;
     }
 }
