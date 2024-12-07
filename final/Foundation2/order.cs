@@ -2,8 +2,8 @@ using System.Runtime.CompilerServices;
 
 public class Order
 {
-    public Customer customer {get; set;}
-    public List<Product> _products = new List<Product>();
+    private Customer customer {get; set;}
+    private List<Product> _products = new List<Product>();
 
     //constructor
     public Order(Customer customer)
@@ -38,13 +38,13 @@ public class Order
         string label = "";
         foreach (var product in _products)
         {
-            label += $"{product._name} - {product._id}\n";
+            label += $"{product.Name} - {product.Id}\n";
         }
         return label;
     }
 
     public string GetShippingLabel()
     {
-        return $"{customer._name}\n{customer._address.GetAddress()}";
+        return $"{customer.Name}\n{customer.Address.GetAddress()}";
     }
 }

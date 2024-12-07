@@ -2,12 +2,12 @@ using System.Numerics;
 
 public class Product
 {
-    public string _name {get; set;}
-    public string _id {get; set;}
-    public double _unitPrice {get; set;}
-    public int _quantity {get; set;}
+    private string _name {get; set;}
+    private string _id {get; set;}
+    private double _unitPrice {get; set;}
+    private int _quantity {get; set;}
 
-    public double _totalPrice;
+    private double _totalPrice;
 
     public Product(string name, string id, double unitPrice, int quantity)
     {
@@ -21,5 +21,14 @@ public class Product
         return _unitPrice * _quantity;
     }
 
+    public string Name
+    {
+        get { return _name; }
+    }
+
+    public string Id
+    {
+        get { return _id; }
+    }
 
 }
