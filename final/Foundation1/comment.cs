@@ -1,9 +1,9 @@
 using System.Transactions;
 
-class Comment
+public class Comment
 {
-   string _author;
-   string _comment;
+   public string _author;
+   public string _comment;
 
    public Comment(string author, string comment)
    {

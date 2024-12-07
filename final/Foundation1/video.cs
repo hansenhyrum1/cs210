@@ -1,9 +1,9 @@
-class Video
+public class Video
 {
-     string _title {get; set;}
-    string _author {get; set;}
-    int _length {get; set;}
-    List<Comment> comments;
+    public string _title {get; set;}
+    public string _author {get; set;}
+    public int _length {get; set;}
+    public List<Comment> comments;
 
     public Video(string title, string author, int length)
     {

@@ -3,7 +3,7 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
+    {   
         List<Video> videos = new List<Video>();
 
         Video video1 = new Video("O Holy Night", "The Tabnernacle Choir", 1691);
@@ -14,7 +14,7 @@ class Program
 
         videos.Add(video1);
 
-        Video video2 = new Video("I Saw Three Ships - Richard Elliott Christmas Organ and Percussion Trio", 255);
+        Video video2 = new Video("I Saw Three Ships", "Richard Elliott Christmas Organ and Percussion Trio", 255);
 
         video2.AddComment("Hyrum", "I absolutely love the organ, and the percussion just made this over-the-top amazing.");
         video2.AddComment("Sabrina", "Richard Elliot is so talented, I wonder how much he has to practice every week?");
@@ -22,7 +22,7 @@ class Program
 
         videos.Add(video2);
 
-        Video video3 = new Video("Sing We Now of Christmas: BYU-Idaho Christmas 2017", 350);
+        Video video3 = new Video("Sing We Now of Christmas", "BYU-Idaho Christmas 2017", 350);
 
         video3.AddComment("Hyrum", "I remember attending this as a teenager, it was so spectacular to see it in person.");
         video3.AddComment("Timothy", "Wow, I didn't know that BYU-Idaho put on a Christmas show, how amazing is this?");
